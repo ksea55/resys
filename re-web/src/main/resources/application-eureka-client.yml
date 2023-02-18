@@ -2,6 +2,8 @@
 #eureka:
 #  instance:
 #    hostname: localhost
+#    instance-id: re-app #在eureka 显示的status状态名称
+#    prefer-ip-address: true #在点击服务名的时候显示ip地址便于调试
 #  client:
 #    registerWithEureka: false #向服务注册中心注册自己
 #    fetchRegistry: false
@@ -13,6 +15,8 @@
 eureka:
   instance:
     hostname: localhost
+    instance-id: re-web #在eureka 显示的status状态名称
+    prefer-ip-address: true #在点击服务名的时候显示ip地址便于调试
   client:
     registerWithEureka: true #向服务注册中心注册自己
     fetchRegistry: true
