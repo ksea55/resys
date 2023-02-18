@@ -1,0 +1,32 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: re-netflix8002
+
+## 单机版配置
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+## 集配配置 用例主要与re-netfilx1 进行集群测试  C:\Windows\System32\drivers\etc 这里以windows作为模拟
+#127.0.0.1  re-netflix.com 为re-netflix的域名映射
+#127.0.0.1  re-netflix1.com 为re-netflix1的域名映射
+
+eureka:
+  instance:
+    hostname: re-netflix1.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      #注意这里的地址，集群映射在这个位置是添加的对方集群的，如有多个在此处就添加多个
+      defaultZone: http://re-netflix.com:8001/eureka/
+

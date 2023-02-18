@@ -1,0 +1,21 @@
+# 此单机版本client配置信息
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    registerWithEureka: true #向服务注册中心注册自己
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://localhost:8001/eureka/ #指向注册中心的服务地址
+
+
+#以下为注册服务为集群
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true #向服务注册中心注册自己
+    fetchRegistry: true
+    serviceUrl:
+      #集群的话有多个就的注册多个
+      defaultZone: http://re-netflix.com:8001/eureka/,http://re-netflix1.com:8002/eureka/
